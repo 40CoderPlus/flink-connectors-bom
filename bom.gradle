@@ -1,7 +1,7 @@
 ext.thirdParty = [
         'mysql:mysql-connector-java'     : '8.0.30',
         'org.postgresql:postgresql'      : '42.5.0',
-        'com.oracle.database.jdbc:ojdbc8': '21.7.0.0'
+        'com.oracle.database.jdbc:ojdbc8': '21.7.0.0',
 ]
 
 ext.flinkSqlFormats = [
@@ -9,7 +9,7 @@ ext.flinkSqlFormats = [
         'flink-avro-confluent-registry': '1.17.0',
         'flink-sql-orc'                : '1.17.0',
         'flink-sql-parquet'            : '1.17.0',
-        'flink-sql-protobuf'           : '1.17.0'
+        'flink-sql-protobuf'           : '1.17.0',
 ]
 
 ext.flinkSqlConnectors = [
