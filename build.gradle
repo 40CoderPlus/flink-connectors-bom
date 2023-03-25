@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = "https://repo1.maven.org/maven2/"
+    }
+}
+
+configurations {
+    flinkConnector {
+        transitive = false
+    }
+}
+
+apply from: 'bom.gradle'
+
+dependencies {
+    flinkSqlFormats.each { entry ->
+        flinkConnector "org.apache.flink:$entry.key:$entry.value"
+    }
+    flinkSqlConnectors.each { entry ->
+        flinkConnector "org.apache.flink:$entry.key:$entry.value"
+    }
+
+    thirdParty.each { entry ->
+        flinkConnector "$entry.key:$entry.value"
+    }
+
+    flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
+}
+
+tasks.register('flinkConnector', Copy) {
+    copy {
+        from configurations.flinkConnector
+        into "${buildDir}/connectors"
+    }
+}
+
+tasks.named('build') {
+    finalizedBy('flinkConnector')
+}
