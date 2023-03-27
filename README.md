@@ -9,7 +9,11 @@ gradle flinkConnector
 
 Comment which connectors unneeded in file [Flink Connectors Bom](bom.gradle)
 
-## Docker Image
+## YARN
+
+Copy jars in build/connectors to `$FLINK_DIST_HOME/lib` .
+
+## Kubernetes
 
 If build image with [Dockerfile](Dockerfile), all the connectors libraries will copy to `$FLINK_HOME/lib/`
 
