@@ -32,6 +32,10 @@ dependencies {
     }
 
     flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
+
+    if (hadoopMajor == '3') {
+        flinkConnector 'commons-cli:commons-cli:1.5.0'
+    }
 }
 
 tasks.register('flinkConnector', Copy) {
