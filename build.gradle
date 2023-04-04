@@ -20,6 +20,10 @@ configurations {
 apply from: 'bom.gradle'
 
 dependencies {
+    flinkDataStreamConnectors.each { entry ->
+        flinkConnector "org.apache.flink:$entry.key:$entry.value"
+    }
+
     flinkSqlFormats.each { entry ->
         flinkConnector "org.apache.flink:$entry.key:$entry.value"
     }
@@ -36,6 +40,8 @@ dependencies {
     if (hadoopMajor == '3') {
         flinkConnector 'commons-cli:commons-cli:1.5.0'
     }
+
+    flinkConnector "org.apache.flink:${flinkHive[hiveMajor][0]}:${flinkHive[hiveMajor][1]}"
 }
 
 tasks.register('flinkConnector', Copy) {
