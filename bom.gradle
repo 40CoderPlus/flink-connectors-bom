@@ -29,4 +29,5 @@ ext.flinkSqlConnectors = [
 
         'flink-sql-connector-hbase-1.4'           : '1.17.0',
         'flink-sql-connector-hbase-2.2'           : '1.17.0',
+        'flink-sql-connector-mongodb'             : '1.0.0-1.16',
 ]
