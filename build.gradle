@@ -35,13 +35,17 @@ dependencies {
         flinkConnector "$entry.key:$entry.value"
     }
 
-    flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
+    if (Boolean.valueOf(haveHadoop)) {
+        flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
 
-    if (hadoopMajor == '3') {
-        flinkConnector 'commons-cli:commons-cli:1.5.0'
+        if (hadoopMajor == '3') {
+            flinkConnector 'commons-cli:commons-cli:1.5.0'
+        }
     }
 
-    flinkConnector "org.apache.flink:${flinkHive[hiveMajor][0]}:${flinkHive[hiveMajor][1]}"
+    if (Boolean.valueOf(haveHive)) {
+        flinkConnector "org.apache.flink:${flinkHive[hiveMajor][0]}:${flinkHive[hiveMajor][1]}"
+    }
 }
 
 tasks.register('flinkConnector', Copy) {
