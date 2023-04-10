@@ -7,7 +7,21 @@ gradle flinkConnector
 
 # Custom
 
+## By Comment
+
 Comment which connectors unneeded in file [Flink Connectors Bom](bom.gradle)
+
+## By Parameter
+
+Parameter
+- haveHadoop
+- haveHive
+
+Example:
+
+```shell
+gradle -PhaveHive=false flinkConnector
+```
 
 ## YARN
 
