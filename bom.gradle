@@ -30,6 +30,7 @@ ext.flinkSqlConnectors = [
 
         'flink-sql-connector-elasticsearch6'      : '3.0.0-1.16',
         'flink-sql-connector-elasticsearch7'      : '3.0.0-1.16',
+        'flink-sql-connector-opensearch'          : '1.0.0-1.16',
 
         'flink-sql-connector-hbase-1.4'           : '1.17.0',
         'flink-sql-connector-hbase-2.2'           : '1.17.0',
