@@ -6,6 +6,7 @@ ext.thirdParty = [
 
 ext.flinkDataStreamConnectors = [
         'flink-connector-cassandra_2.12': '3.0.0-1.16',
+        'flink-connector-gcp-pubsub'    : '3.0.0-1.16',
 ]
 
 ext.flinkSqlFormats = [
