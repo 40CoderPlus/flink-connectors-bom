@@ -5,6 +5,7 @@ plugins {
 
 repositories {
     mavenLocal()
+    maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenCentral()
     maven {
         url = "https://repo1.maven.org/maven2/"
@@ -33,6 +34,12 @@ dependencies {
 
     thirdParty.each { entry ->
         flinkConnector "$entry.key:$entry.value"
+    }
+
+    if (Boolean.valueOf(haveCdc)) {
+        flinkCdcSqlConnectors.each { entry ->
+            flinkConnector "com.ververica:${entry}:${flinkCdcVersion}"
+        }
     }
 
     if (Boolean.valueOf(haveHadoop)) {

@@ -1,7 +1,9 @@
 ext.thirdParty = [
-        'com.mysql:mysql-connector-j'    : '8.0.32',
-        'org.postgresql:postgresql'      : '42.5.0',
-        'com.oracle.database.jdbc:ojdbc8': '21.7.0.0',
+        'com.mysql:mysql-connector-j'       : '8.0.32',
+        'org.postgresql:postgresql'         : '42.5.0',
+        'com.oracle.database.jdbc:ojdbc8'   : '21.7.0.0',
+        'com.ibm.db2:jcc'                   : '11.5.8.0',
+        'com.microsoft.sqlserver:mssql-jdbc': '12.2.0.jre11',
 ]
 
 ext.flinkDataStreamConnectors = [
@@ -42,4 +44,15 @@ ext.flinkSqlConnectors = [
 ext.flinkHive = [
         '2': ['flink-sql-connector-hive-2.3.9_2.12', '1.17.0'],
         '3': ['flink-sql-connector-hive-3.1.3_2.12', '1.17.0'],
+]
+
+ext.flinkCdcSqlConnectors = [
+        'flink-sql-connector-mongodb-cdc',
+        'flink-sql-connector-mysql-cdc',
+        'flink-sql-connector-oceanbase-cdc',
+        'flink-sql-connector-oracle-cdc',
+        'flink-sql-connector-postgres-cdc',
+        'flink-sql-connector-sqlserver-cdc',
+        'flink-sql-connector-tidb-cdc',
+        'flink-sql-connector-db2-cdc',
 ]
