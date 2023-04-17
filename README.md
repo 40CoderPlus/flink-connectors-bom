@@ -13,9 +13,15 @@ Comment which connectors unneeded in file [Flink Connectors Bom](bom.gradle)
 
 ## By Parameter
 
-Parameter
+Parameters:
+
+- haveCdc
 - haveHadoop
 - haveHive
+- hadoopMajor
+- hiveMajor
+
+See more in [Gradle Properties](gradle.properties)
 
 Example:
 
