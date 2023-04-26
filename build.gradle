@@ -5,11 +5,7 @@ plugins {
 
 repositories {
     mavenLocal()
-    maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenCentral()
-    maven {
-        url = "https://repo1.maven.org/maven2/"
-    }
 }
 
 configurations {
@@ -36,13 +32,13 @@ dependencies {
         flinkConnector "$entry.key:$entry.value"
     }
 
-    if (Boolean.valueOf(haveCdc)) {
+    if (Boolean.valueOf(includeCdc)) {
         flinkCdcSqlConnectors.each { entry ->
             flinkConnector "com.ververica:${entry}:${flinkCdcVersion}"
         }
     }
 
-    if (Boolean.valueOf(haveHadoop)) {
+    if (Boolean.valueOf(includeHadoop)) {
         flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
 
         if (hadoopMajor == '3') {
@@ -50,7 +46,7 @@ dependencies {
         }
     }
 
-    if (Boolean.valueOf(haveHive)) {
+    if (Boolean.valueOf(includeHive)) {
         flinkConnector "org.apache.flink:${flinkHive[hiveMajor][0]}:${flinkHive[hiveMajor][1]}"
     }
 }

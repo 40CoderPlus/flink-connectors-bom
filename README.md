@@ -15,9 +15,9 @@ Comment which connectors unneeded in file [Flink Connectors Bom](bom.gradle)
 
 Parameters:
 
-- haveCdc
-- haveHadoop
-- haveHive
+- includeCdc
+- includeHadoop
+- includeHive
 - hadoopMajor
 - hiveMajor
 
@@ -26,7 +26,8 @@ See more in [Gradle Properties](gradle.properties)
 Example:
 
 ```shell
-gradle -PhaveHive=false flinkConnector
+gradle -PincludeHive=true flinkConnector
+gradle -PincludeHive=true -PhiveMajor=2 flinkConnector
 ```
 
 ## YARN
