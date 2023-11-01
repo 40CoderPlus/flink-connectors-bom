@@ -7,43 +7,43 @@ ext.thirdParty = [
 ]
 
 ext.flinkDataStreamConnectors = [
-        'flink-connector-cassandra_2.12': '3.0.0-1.16',
-        'flink-connector-gcp-pubsub'    : '3.0.0-1.16',
+        'flink-connector-cassandra_2.12': '3.1.0-1.17',
+        'flink-connector-gcp-pubsub'    : '3.0.1-1.17',
 ]
 
 ext.flinkSqlFormats = [
-        'flink-sql-avro'               : '1.17.0',
-        'flink-avro-confluent-registry': '1.17.0',
-        'flink-sql-orc'                : '1.17.0',
-        'flink-sql-parquet'            : '1.17.0',
-        'flink-sql-protobuf'           : '1.17.0',
+        'flink-sql-avro'               : "${flinkVersion}",
+        'flink-avro-confluent-registry': "${flinkVersion}",
+        'flink-sql-orc'                : "${flinkVersion}",
+        'flink-sql-parquet'            : "${flinkVersion}",
+        'flink-sql-protobuf'           : "${flinkVersion}",
 ]
 
 ext.flinkSqlConnectors = [
-        'flink-connector-files'                   : '1.17.0',
-        'flink-connector-jdbc'                    : '3.0.0-1.16',
+        'flink-connector-files'                   : "${flinkVersion}",
+        'flink-connector-jdbc'                    : '3.1.1-1.17',
 
-        'flink-sql-connector-kafka'               : '1.17.0',
-        'flink-sql-connector-pulsar'              : '3.0.0-1.16',
-        'flink-sql-connector-rabbitmq'            : '3.0.0-1.16',
+        'flink-sql-connector-kafka'               : "3.0.1-1.18",
+        'flink-sql-connector-pulsar'              : '4.0.0-1.17',
+        'flink-sql-connector-rabbitmq'            : '3.0.1-1.17',
 
-        'flink-sql-connector-kinesis'             : '4.0.0-1.16',
-        'flink-sql-connector-aws-kinesis-firehose': '4.0.0-1.16',
-        'flink-sql-connector-dynamodb'            : '4.0.0-1.16',
+        'flink-sql-connector-kinesis'             : '4.1.0-1.17',
+        'flink-sql-connector-aws-kinesis-firehose': '4.1.0-1.17',
+        'flink-sql-connector-dynamodb'            : '4.1.0-1.17',
 
-        'flink-sql-connector-elasticsearch6'      : '3.0.0-1.16',
-        'flink-sql-connector-elasticsearch7'      : '3.0.0-1.16',
-        'flink-sql-connector-opensearch'          : '1.0.0-1.16',
+        'flink-sql-connector-elasticsearch6'      : '3.0.1-1.17',
+        'flink-sql-connector-elasticsearch7'      : '3.0.1-1.17',
+        'flink-sql-connector-opensearch'          : '1.0.1-1.17',
 
-        'flink-sql-connector-hbase-1.4'           : '1.17.0',
-        'flink-sql-connector-hbase-2.2'           : '1.17.0',
+        'flink-sql-connector-hbase-1.4'           : '3.0.0-1.17',
+        'flink-sql-connector-hbase-2.2'           : '3.0.0-1.17',
 
-        'flink-sql-connector-mongodb'             : '1.0.0-1.16',
+        'flink-sql-connector-mongodb'             : '1.0.2-1.17',
 ]
 
 ext.flinkHive = [
-        '2': ['flink-sql-connector-hive-2.3.9_2.12', '1.17.0'],
-        '3': ['flink-sql-connector-hive-3.1.3_2.12', '1.17.0'],
+        '2': ['flink-sql-connector-hive-2.3.9_2.12', "${flinkVersion}"],
+        '3': ['flink-sql-connector-hive-3.1.3_2.12', "${flinkVersion}"],
 ]
 
 ext.flinkCdcSqlConnectors = [
@@ -55,4 +55,5 @@ ext.flinkCdcSqlConnectors = [
         'flink-sql-connector-sqlserver-cdc',
         'flink-sql-connector-tidb-cdc',
         'flink-sql-connector-db2-cdc',
+        'flink-connector-vitess-cdc',
 ]
