@@ -57,3 +57,8 @@ ext.flinkCdcSqlConnectors = [
         'flink-sql-connector-db2-cdc',
         'flink-connector-vitess-cdc',
 ]
+
+ext.flinkPaimon = [
+        'paimon-flink-1.17'  : '0.5.0-incubating',
+        'paimon-flink-action': '0.5.0-incubating'
+]

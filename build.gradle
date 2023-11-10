@@ -35,11 +35,6 @@ dependencies {
         flinkConnector "$entry.key:$entry.value"
     }
 
-    if (Boolean.valueOf(includeCdc)) {
-        flinkCdcSqlConnectors.each { entry ->
-            flinkConnector "com.ververica:${entry}:${flinkCdcVersion}"
-        }
-    }
 
     if (Boolean.valueOf(includeHadoop)) {
         flinkConnector files("libs/flink-shaded-hadoop-${hadoopMajor}-uber.jar")
@@ -51,6 +46,20 @@ dependencies {
 
     if (Boolean.valueOf(includeHive)) {
         flinkConnector "org.apache.flink:${flinkHive[hiveMajor][0]}:${flinkHive[hiveMajor][1]}"
+    }
+
+    // Flink CDC
+    if (Boolean.valueOf(includeCdc)) {
+        flinkCdcSqlConnectors.each { entry ->
+            flinkConnector "com.ververica:${entry}:${flinkCdcVersion}"
+        }
+    }
+
+    // DataLake
+    if (Boolean.valueOf(includePaimon)) {
+        flinkPaimon.each { entry ->
+            flinkConnector "org.apache.paimon:$entry.key:$entry.value"
+        }
     }
 }
 
