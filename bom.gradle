@@ -55,7 +55,7 @@ ext.flinkCdcSqlConnectors = [
         'flink-sql-connector-sqlserver-cdc',
         'flink-sql-connector-tidb-cdc',
         'flink-sql-connector-db2-cdc',
-        'flink-connector-vitess-cdc',
+        'flink-sql-connector-vitess-cdc',
 ]
 
 ext.flinkPaimon = [
