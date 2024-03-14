@@ -59,6 +59,6 @@ ext.flinkCdcSqlConnectors = [
 ]
 
 ext.flinkPaimon = [
-        'paimon-flink-1.18'  : '0.6.0-incubating',
-        'paimon-flink-action': '0.6.0-incubating'
+        'paimon-flink-1.18'  : '0.7.0-incubating',
+        'paimon-flink-action': '0.7.0-incubating'
 ]
