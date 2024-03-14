@@ -57,7 +57,7 @@ dependencies {
 
     // DataLake
     if (Boolean.valueOf(includePaimon)) {
-        flinkPaimon.each { entry ->
+        paimonFlink.each { entry ->
             flinkConnector "org.apache.paimon:$entry.key:$entry.value"
         }
     }
